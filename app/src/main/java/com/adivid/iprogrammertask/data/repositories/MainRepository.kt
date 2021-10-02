@@ -13,10 +13,8 @@ class MainRepository @Inject constructor(
     private val dao: WeatherDao
 ) {
 
-    private val TAG = "MainRepository"
 
     suspend fun getWeatherDetails(city: String, id: String): WeatherResult {
-        Log.d(TAG, "getWeatherDetails: "  + String + " " +  id)
         return api.getWeatherDetails(city, id)
     }
 

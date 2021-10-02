@@ -73,7 +73,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun observers() {
         mainViewModel.searchNotes.observe(this, { response ->
-
             when (response) {
                 is Resource.Success -> {
                     binding.progressBar.showProgressBar(false)
@@ -83,6 +82,7 @@ class MainActivity : AppCompatActivity() {
                         weatherAdapter.submitList(list)
                         //weatherAdapter.notifyDataSetChanged()
                         weatherAdapter.notifyItemChanged(0)
+                        mainViewModel.setUpSuggestions()
                     }
                 }
                 is Resource.Error -> {

@@ -21,7 +21,6 @@ class MainViewModel @Inject constructor(
     private val repository: MainRepository
 ) : ViewModel() {
 
-    private val TAG = "MainViewModel"
     var searchNotes = MutableLiveData<Resource<WeatherEntity>>()
     var cities = MutableLiveData<Resource<List<String>?>>()
 
